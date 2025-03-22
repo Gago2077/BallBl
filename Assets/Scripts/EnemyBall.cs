@@ -1,55 +1,25 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using TMPro;
 
 public class EnemyBall : MonoBehaviour
 {
-    public int Health;
     [SerializeField] private float _speedOnSpawn;
-    private TextMeshPro _healthText;
-    private GameObject _player;
+    private Rigidbody _rb;
+    private HealthSystem _healthSystem;
 
     private void Start()
     {
-        Health = LevelManager.Instance.GetHealth();
-        Rigidbody rb = GetComponent<Rigidbody>();
-        rb.AddForce(Vector3.back * _speedOnSpawn, ForceMode.Impulse);
-        _healthText = GetComponentInChildren<TextMeshPro>();
-        _player = GameObject.Find("Player");
+        _rb = GetComponent<Rigidbody>();
+        _healthSystem = GetComponent<HealthSystem>();
 
+        _rb.AddForce(Vector3.back * _speedOnSpawn, ForceMode.Impulse);
     }
-    private void Update()
-    {
-        UpdateHealthText();
-        DieCheck();
-    }
-    private void UpdateHealthText()
-    {
-        _healthText.text = Health.ToString();
-        
-    }
-    private void DieCheck()
-    {
-        if(Health <= 0)
-        {
-            Destroy(gameObject);
-        }
-    }
-    private void OnCollisionEnter(Collision collision)
-    {
-        
-        
-    }
+
     private void OnTriggerEnter(Collider other)
     {
-        Debug.Log($"Collision detected with: {other.gameObject.name}");
-
-        if (other.gameObject.CompareTag("Projectile"))
+        if (other.TryGetComponent<IProjectile>(out IProjectile projectile))
         {
-            Health -= _player.GetComponent<Firing>()._projectileDamage;
+            _healthSystem.TakeDamage(projectile.Damage);
             Destroy(other.gameObject);
         }
     }
 }
-

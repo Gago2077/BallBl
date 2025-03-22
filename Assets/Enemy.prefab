@@ -12,8 +12,9 @@ GameObject:
   - component: {fileID: 7472572458999725429}
   - component: {fileID: 8023913033100911224}
   - component: {fileID: 7392671114251788934}
-  - component: {fileID: 6987187627526610148}
+  - component: {fileID: 2349183789747944686}
   - component: {fileID: 242396982674503930}
+  - component: {fileID: 7394325983474844949}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Enemy
@@ -31,7 +32,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0.1, y: 8.713003, z: 10.937214}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.9263, y: 1.9263, z: 1.9263}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 3376864502405183078}
@@ -103,12 +104,12 @@ SphereCollider:
     m_Bits: 0
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
-  m_ProvidesContacts: 1
+  m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &6987187627526610148
+--- !u!114 &2349183789747944686
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -120,9 +121,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bd70885a31dd52a499924ccd909e58a2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Health: 0
-  _speedOnSpawn: 50
-  firing: {fileID: 0}
+  _speedOnSpawn: 100
 --- !u!54 &242396982674503930
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -150,6 +149,19 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 16
   m_CollisionDetection: 0
+--- !u!114 &7394325983474844949
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 107686832045405802}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 70803f93c45cdad4c850e0c69bdaafac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _healthText: {fileID: 8176945894360354616}
 --- !u!1 &6747232465172841200
 GameObject:
   m_ObjectHideFlags: 0
@@ -249,7 +261,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 15555555555
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -276,7 +288,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 2.4
+  m_fontSize: 5
   m_fontSizeBase: 5
   m_fontWeight: 400
   m_enableAutoSizing: 1
