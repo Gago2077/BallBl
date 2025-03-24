@@ -19,7 +19,7 @@ public class CannonMovement : MonoBehaviour
         Move(horizontalInput);
         ClampPosition();
     }
-
+    
     private void Move(float input)
     {
         _rb.velocity = new Vector3(input * _movementSpeed, _rb.velocity.y, _rb.velocity.z);

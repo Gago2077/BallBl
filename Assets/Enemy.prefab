@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 2349183789747944686}
   - component: {fileID: 242396982674503930}
   - component: {fileID: 7394325983474844949}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Enemy
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -32,7 +32,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0.1, y: 8.713003, z: 10.937214}
-  m_LocalScale: {x: 1.9263, y: 1.9263, z: 1.9263}
+  m_LocalScale: {x: 2.5, y: 2.5, z: 2.5}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 3376864502405183078}
@@ -121,7 +121,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bd70885a31dd52a499924ccd909e58a2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _speedOnSpawn: 100
+  _speedOnSpawn: 1400
 --- !u!54 &242396982674503930
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -130,7 +130,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 107686832045405802}
   serializedVersion: 4
-  m_Mass: 10
+  m_Mass: 80
   m_Drag: 0
   m_AngularDrag: 0.05
   m_CenterOfMass: {x: 0, y: 0, z: 0}
@@ -173,7 +173,7 @@ GameObject:
   - component: {fileID: 3376864502405183078}
   - component: {fileID: 7707195874453172668}
   - component: {fileID: 8176945894360354616}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Text (TMP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}

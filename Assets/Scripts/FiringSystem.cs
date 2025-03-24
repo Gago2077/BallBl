@@ -9,6 +9,11 @@ public class FiringSystem : MonoBehaviour
 
     private float _cooldownTimer = 0;
 
+    private void Start()
+    {
+        // Ignore collision between bullets and enemies
+        
+    }
     private void Update()
     {
         _cooldownTimer += Time.deltaTime;
@@ -22,9 +27,10 @@ public class FiringSystem : MonoBehaviour
     private void Fire()
     {
         GameObject projectile = Instantiate(_projectilePrefab, _firePoint.position, _firePoint.rotation);
-        if (projectile.TryGetComponent<Rigidbody>(out Rigidbody rb))
-        {
-            rb.AddForce(_firePoint.forward * _projectileSpeed, ForceMode.Impulse);
-        }
+        Rigidbody rb = projectile.GetComponent<Rigidbody>();
+
+        rb.AddForce(_firePoint.forward * _projectileSpeed, ForceMode.Impulse);
+
     }
+
 }

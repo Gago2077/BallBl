@@ -134,7 +134,7 @@ GameObject:
   - component: {fileID: 161455751}
   - component: {fileID: 161455750}
   - component: {fileID: 161455749}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Plane
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -240,7 +240,7 @@ GameObject:
   - component: {fileID: 506605119}
   - component: {fileID: 506605118}
   - component: {fileID: 506605117}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Wall1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -520,7 +520,7 @@ GameObject:
   - component: {fileID: 624506363}
   - component: {fileID: 624506367}
   - component: {fileID: 624506368}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -542,7 +542,7 @@ MonoBehaviour:
   _fireRate: 0.2
   _projectilePrefab: {fileID: 239653733935371150, guid: e5e56569ba31c894f846f7cb55e8d97d, type: 3}
   _firePoint: {fileID: 665691588}
-  _projectileSpeed: 35
+  _projectileSpeed: 20
 --- !u!114 &624506364
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -555,7 +555,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1e7cba9c38b7c7c42967948d3ce70bb0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _rotationX: 15
+  _rotationX: 30
   _rotationY: 30
   _mouseSensitivity: 25
 --- !u!114 &624506365
@@ -570,7 +570,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0829ab27405aec643af83f63c78cc8c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _movementRange: 5
+  _movementRange: 6
   _movementSpeed: 10
 --- !u!4 &624506366
 Transform:
@@ -581,7 +581,7 @@ Transform:
   m_GameObject: {fileID: 624506362}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.37, z: -76.76}
+  m_LocalPosition: {x: 0, y: 1.28, z: -76.76}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -615,7 +615,7 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 12
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
 --- !u!65 &624506368
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -635,8 +635,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1.7425, y: 1.7425, z: 1.7425}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 1.7425, y: 1.3700781, z: 3.1290054}
+  m_Center: {x: 0, y: 0.32116508, z: 0.35600662}
 --- !u!1 &665691587
 GameObject:
   m_ObjectHideFlags: 0
@@ -646,7 +646,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 665691588}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: FirePoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -912,8 +912,20 @@ PrefabInstance:
       value: Enemy (2)
       objectReference: {fileID: 0}
     - target: {fileID: 242396982674503930, guid: 0fc5eec4dccaeec4493c58f07a015c29, type: 3}
+      propertyPath: m_Mass
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 242396982674503930, guid: 0fc5eec4dccaeec4493c58f07a015c29, type: 3}
+      propertyPath: m_Constraints
+      value: 48
+      objectReference: {fileID: 0}
+    - target: {fileID: 242396982674503930, guid: 0fc5eec4dccaeec4493c58f07a015c29, type: 3}
       propertyPath: m_IsKinematic
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2349183789747944686, guid: 0fc5eec4dccaeec4493c58f07a015c29, type: 3}
+      propertyPath: _speedOnSpawn
+      value: 1400
       objectReference: {fileID: 0}
     - target: {fileID: 7392671114251788934, guid: 0fc5eec4dccaeec4493c58f07a015c29, type: 3}
       propertyPath: m_ProvidesContacts
@@ -937,7 +949,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7601201460421617026, guid: 0fc5eec4dccaeec4493c58f07a015c29, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 5.22
+      value: 8.92
       objectReference: {fileID: 0}
     - target: {fileID: 7601201460421617026, guid: 0fc5eec4dccaeec4493c58f07a015c29, type: 3}
       propertyPath: m_LocalPosition.z
@@ -999,7 +1011,7 @@ GameObject:
   - component: {fileID: 987945890}
   - component: {fileID: 987945889}
   - component: {fileID: 987945888}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Wall2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1108,6 +1120,10 @@ PrefabInstance:
       propertyPath: m_IsKinematic
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2349183789747944686, guid: 0fc5eec4dccaeec4493c58f07a015c29, type: 3}
+      propertyPath: _speedOnSpawn
+      value: 1400
+      objectReference: {fileID: 0}
     - target: {fileID: 7392671114251788934, guid: 0fc5eec4dccaeec4493c58f07a015c29, type: 3}
       propertyPath: m_ProvidesContacts
       value: 0
@@ -1130,7 +1146,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7601201460421617026, guid: 0fc5eec4dccaeec4493c58f07a015c29, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 5.22
+      value: 8.92
       objectReference: {fileID: 0}
     - target: {fileID: 7601201460421617026, guid: 0fc5eec4dccaeec4493c58f07a015c29, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1196,6 +1212,10 @@ PrefabInstance:
       propertyPath: m_IsKinematic
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2349183789747944686, guid: 0fc5eec4dccaeec4493c58f07a015c29, type: 3}
+      propertyPath: _speedOnSpawn
+      value: 1400
+      objectReference: {fileID: 0}
     - target: {fileID: 7392671114251788934, guid: 0fc5eec4dccaeec4493c58f07a015c29, type: 3}
       propertyPath: m_ProvidesContacts
       value: 0
@@ -1218,7 +1238,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7601201460421617026, guid: 0fc5eec4dccaeec4493c58f07a015c29, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 5.22
+      value: 8.92
       objectReference: {fileID: 0}
     - target: {fileID: 7601201460421617026, guid: 0fc5eec4dccaeec4493c58f07a015c29, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1321,7 +1341,7 @@ GameObject:
   - component: {fileID: 6822110262472166776}
   - component: {fileID: 7566850800148562653}
   - component: {fileID: 5685282156351108631}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Cannon
   m_TagString: Untagged
   m_Icon: {fileID: 0}

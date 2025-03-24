@@ -14,12 +14,14 @@ public class EnemyBall : MonoBehaviour
         _rb.AddForce(Vector3.back * _speedOnSpawn, ForceMode.Impulse);
     }
 
-    private void OnTriggerEnter(Collider other)
+    private void OnCollisionEnter(Collision collision)
     {
-        if (other.TryGetComponent<IProjectile>(out IProjectile projectile))
+        Debug.Log($"Collision detected with: {collision.gameObject.name}");
+
+        if (collision.gameObject.TryGetComponent<IProjectile>(out IProjectile projectile))
         {
             _healthSystem.TakeDamage(projectile.Damage);
-            Destroy(other.gameObject);
+            Destroy(collision.gameObject);
         }
     }
 }
