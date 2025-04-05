@@ -11,7 +11,7 @@ public class EnemyBall : MonoBehaviour
         _rb = GetComponent<Rigidbody>();
         _healthSystem = GetComponent<HealthSystem>();
 
-        _rb.AddForce(Vector3.back * _speedOnSpawn, ForceMode.Impulse);
+        _rb.AddForce((Vector3.back + Vector3.right) * _speedOnSpawn, ForceMode.Impulse);
     }
 
     private void OnCollisionEnter(Collision collision)

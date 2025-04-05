@@ -6,7 +6,7 @@ public class LevelManager : MonoBehaviour
 {
     public static LevelManager Instance { get; private set; }
 
-    private int _currentLevel = 100;
+    private int _currentLevel = 1;
     private float _levelMaxDifficulty;
     private float _levelMinDifficulty;
     private int _currentScore=0;
